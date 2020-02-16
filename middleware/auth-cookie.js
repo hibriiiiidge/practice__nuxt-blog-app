@@ -4,10 +4,14 @@ export default ({ req, store }) => {
   if(process.browser) {
     return
   }
-  const cookies = new Cookies(req.headers.cookies)
-  const user = cookies.get('user')
-  if(user && user.id) {
-    const { id, likes } = user
-    store.commit('setUser', { user: { id, likes } })
+  if (process.server) {
+    if(req && req.headers && req.headers.cookie){
+      const cookies = new Cookies(req.headers.cookie)
+      const user = cookies.get('user')
+      if(user && user.id) {
+        const { id, likes } = user
+        store.commit('setUser', { user: { id, likes } })
+      }
+    }
   }
 }
