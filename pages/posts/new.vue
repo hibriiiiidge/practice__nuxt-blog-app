@@ -36,7 +36,7 @@ export default {
     ...mapGetters(['user'])
   },
   methods: {
-    publish() {
+    async publish() {
       const payload = {
         user: this.user,
         ...this.formData,

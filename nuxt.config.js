@@ -59,6 +59,6 @@ export default {
     }
   },
   axios: {
-    baseURL: 'https://nuxt-beginner-guide-15d29.firebaseio.com'
+    baseURL: 'https://nuxt-blog-b9ff9.firebaseio.com'
   }
 }
