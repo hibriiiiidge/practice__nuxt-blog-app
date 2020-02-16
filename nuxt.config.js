@@ -51,5 +51,8 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  axios: {
+    baseURL: 'https://nuxt-beginner-guide-15d29.firebaseio.com'
   }
 }
